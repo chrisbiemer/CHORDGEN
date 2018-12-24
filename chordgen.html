@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  		src="https://code.jquery.com/jquery-3.3.1.js"
+  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  		crossorigin="anonymous"></script>
+	<style>
+
+		body {
+			background-image: url(prehurricane.png);
+			background-size: cover;
+		}
+
+
+		.button_container {
+			width: 8.333%;
+			padding: 0;
+			margin: 0;
+			float: left;
+		}
+
+		#Error {
+			color: maroon;
+		}
+
+		img {
+			padding: 0;
+			margin: 0;
+		}
+
+		#no {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+
+	<img id="visPiano" style="width: 100%;" src="firepiano.png" alt="piano_image">
+	<div style="text-align: center" class="button_container">
+		C
+	</div>
+	<div style="text-align: center" class="button_container">
+		C#
+	</div>
+	<div style="text-align: center" class="button_container">
+		D 
+	</div>
+	<div style="text-align: center" class="button_container">
+		D#
+	</div>
+	<div style="text-align: center" class="button_container">
+		E
+	</div>
+	<div style="text-align: center" class="button_container">
+		F
+	</div>
+	<div style="text-align: center" class="button_container">
+		F#
+	</div>
+	<div style="text-align: center" class="button_container">
+		G
+	</div>
+	<div style="text-align: center" class="button_container">
+		G#
+	</div>
+	<div style="text-align: center" class="button_container">
+		A
+	</div>
+	<div style="text-align: center" class="button_container">
+		A#
+	</div>
+	<div style="text-align: center" class="button_container">
+		B
+	</div>
+	<div style="text-align: center" class="button_container">
+		B#
+	</div>
+	<div style="text-align: center" class="button_container">
+		Db
+	</div>
+	<div id="no" style="text-align: center" class="button_container">
+		x
+	</div>
+	<div style="text-align: center" class="button_container">
+		Eb
+	</div>
+	<div style="text-align: center" class="button_container">
+		Fb
+	</div>
+	<div style="text-align: center" class="button_container">
+		E#
+	</div>
+	<div style="text-align: center" class="button_container">
+		Gb
+	</div>
+	<div id="no" style="text-align: center" class="button_container">
+		x
+	</div>
+	<div style="text-align: center" class="button_container">
+		Ab
+	</div>
+	<div id="no" style="text-align: center" class="button_container">
+		x
+	</div>
+	<div style="text-align: center" class="button_container">
+		Bb
+	</div>
+	<div style="text-align: center" class="button_container">
+		Cb
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox1" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox2" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox3" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox4" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox5" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox6" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox7" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox8" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox9" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox10" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox11" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+	<div style="text-align: center" class="button_container">
+		<img id="checkbox12" src="unchecked.jpg" alt="checkbox" width="15px">
+	</div>
+
+	<div id="Error" style="text-align:center">
+
+	</div>
+
+	<div style="text-align:center">
+		<button id="Submit">SUBMIT</button>
+	</div>
+
+	<div style="text-align:center">
+		<button id="Colors">COLORS</button>
+	</div>
+
+	<div style="text-align:center">
+		<button id="Reset">RESET</button>
+	</div>
+
+	<script>
+
+		var color = 0
+
+		var min = 6
+
+		var max = 8
+
+		var scale = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+		var MAJOR = [1, 1, 0, 1, 1, 1];
+
+		var harMIN = [1, 0, 1, 1, 0, 2];
+
+		var melMIN = [1, 0, 1, 1, 1, 1];
+
+		var harMAJ = [1, 1, 0, 1, 0, 2];
+
+		var WHOLE = [1, 1, 1, 1, 1];
+
+		var dim6 = [1, 1, 0, 1, 0, 0, 1];
+
+		var Wh = [1, 0, 1, 0, 1, 0, 1];
+
+		$("img").click(function(e){
+			var x = e.pageX - $(this).offset().left
+			var y = e.pageX - $(this).offset().center
+			if (max > 0) {
+				if (x < $(this).width()/12) {
+					if (scale[0] == 0) {
+						scale[0] = 1;
+						$("#checkbox1").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[0] = 0;
+						$("#checkbox1").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < $(this).width()/6) {
+					if (scale[1] == 0) {
+						scale[1] = 1;
+						$("#checkbox2").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[1] = 0;
+						$("#checkbox2").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < $(this).width()/4) {
+					if (scale[2] == 0) {
+						scale[2] = 1;
+						$("#checkbox3").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[2] = 0;
+						$("#checkbox3").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < $(this).width()/3) {
+					if (scale[3] == 0) {
+						scale[3] = 1;
+						$("#checkbox4").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[3] = 0;
+						$("#checkbox4").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (5*($(this).width()/12))) {
+					if (scale[4] == 0) {
+						scale[4] = 1;
+						$("#checkbox5").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[4] = 0;
+						$("#checkbox5").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < $(this).width()/2) {
+					if (scale[5] == 0) {
+						scale[5] = 1;
+						$("#checkbox6").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[5] = 0;
+						$("#checkbox6").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (7*($(this).width()/12))) {
+					if (scale[6] == 0) {
+						scale[6] = 1;
+						$("#checkbox7").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[6] = 0;
+						$("#checkbox7").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (2*($(this).width()/3))) {
+					if (scale[7] == 0) {
+						scale[7] = 1;
+						$("#checkbox8").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[7] = 0;
+						$("#checkbox8").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (3*($(this).width()/4))) {
+					if (scale[8] == 0) {
+						scale[8] = 1;
+						$("#checkbox9").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[8] = 0;
+						$("#checkbox9").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (10*($(this).width()/12))) {
+					if (scale[9] == 0) {
+						scale[9] = 1;
+						$("#checkbox10").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[9] = 0;
+						$("#checkbox10").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else if (x < (11*($(this).width()/12))) {
+					if (scale[10] == 0) {
+						scale[10] = 1;
+						$("#checkbox11").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[10] = 0;
+						$("#checkbox11").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+				else {
+					if (scale[11] == 0) {
+						scale[11] = 1;
+						$("#checkbox12").attr('src', 'checked.jpg');
+						min -= 1;
+						max -= 1;
+					}
+					else {
+						scale[11] = 0;
+						$("#checkbox12").attr('src', 'unchecked.jpg');
+						min +=1;
+						max +=1;
+					}
+				}
+			}
+			console.log(scale)
+			console.log(min)
+			console.log(max)
+		});
+
+		$("#Submit").click(function(e){
+			if (min <= 0) {
+				scaleFinder(scale)
+				chordGenerator(scale)
+				modalPairings(scale)
+			}
+			else {
+				$("#Error").html("<h7>You have not selected the minimum amount of notes (6). Please try submitting again after fulfilling this criteria.")
+			}
+		});
+
+		$("#Colors").click(function(e){
+			color += 1
+			if (color % 2 == 0) {
+				$("#visPiano").attr('src', 'firepiano.png')
+			}
+			else {
+				$("#visPiano").attr('src', 'waterpiano.png')
+			}
+		});
+
+		$("#Reset").click(function(e){
+			min = 6;
+			max = 8;
+			scale = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			it = 1;
+			while (it<=12) {
+				$("#checkbox" + it).attr('src', 'unchecked.jpg');
+				it+=1;
+			};
+			console.log(scale);
+			console.log(min);
+			console.log(max);
+		});
+
+		function scaleFinder(choices) {
+
+		}
+
+		function chordScaleGenerator(choices) {
+
+		}
+
+		function modalPairings(choices) {
+			
+		}
+
+
+	</script>
+
+</body>
+</html>
