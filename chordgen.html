@@ -148,12 +148,20 @@
 	<div style="text-align: center" class="button_container">
 		<img id="checkbox11" src="unchecked.jpg" alt="checkbox" width="20px">
 	</div>
-	<div style="text-align: center" class="button_container">
+	<div style="text-align: center;" class="button_container">
 		<img id="checkbox12" src="unchecked.jpg" alt="checkbox" width="20px">
 	</div>
 
-	<div id="Console" style="text-align:center">
+	<div id="Sound" style="text-align:center">
+	</div>
 
+	<div id="Error" style="text-align:center">
+	</div>
+
+	<div id="Console" style="text-align:center;">
+		Minimum: 8
+		<div></div>
+		Maximum: 6
 	</div>
 
 	<div style="text-align:center">
@@ -195,14 +203,16 @@
 		$("img").click(function(e){
 			var x = e.pageX - $(this).offset().left
 			var y = e.pageX - $(this).offset().center
-			if (max > 0) {
+			//if (max > 0) {
+				//C
 				if (x < $(this).width()/12) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/C.wav'></audio>");
 					if (scale[0] == 1) {
 						scale[0] = 2;
 						$("#checkbox1").attr('src', 'root.jpg');
-						
 					}
 					else if (scale[0] == 0) {
+						
 						scale[0] = 1;
 						$("#checkbox1").attr('src', 'checked.jpg');
 						min -= 1;
@@ -215,13 +225,16 @@
 						max +=1;
 					}
 				}
+				//C#
 				else if (x < $(this).width()/6) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Cs.wav'></audio>");
 					if (scale[1] == 1) {
 						scale[1] = 2;
 						$("#checkbox2").attr('src', 'root.jpg');
 						
 					}
 					else if (scale[1] == 0) {
+						
 						scale[1] = 1;
 						$("#checkbox2").attr('src', 'checked.jpg');
 						min -= 1;
@@ -234,13 +247,16 @@
 						max +=1;
 					}
 				}
+				//D
 				else if (x < $(this).width()/4) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/D.wav'></audio>");
 					if (scale[2] == 1) {
 						scale[2] = 2;
 						$("#checkbox3").attr('src', 'root.jpg');
 						
 					}
 					else if (scale[2] == 0) {
+						
 						scale[2] = 1;
 						$("#checkbox3").attr('src', 'checked.jpg');
 						min -= 1;
@@ -253,7 +269,9 @@
 						max +=1;
 					}
 				}
+				//D#
 				else if (x < $(this).width()/3) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Ds.wav'></audio>");
 					if (scale[3] == 1) {
 						scale[3] = 2;
 						$("#checkbox4").attr('src', 'root.jpg');
@@ -272,13 +290,14 @@
 						max +=1;
 					}
 				}
+				//E
 				else if (x < (5*($(this).width()/12))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/E.wav'></audio>");
 					if (scale[4] == 1) {
 						scale[4] = 2;
 						$("#checkbox5").attr('src', 'root.jpg');
-						
 					}
-					else if (scale[0] == 0) {
+					else if (scale[4] == 0) {
 						scale[4] = 1;
 						$("#checkbox5").attr('src', 'checked.jpg');
 						min -= 1;
@@ -291,12 +310,14 @@
 						max +=1;
 					}
 				}
+				//F
 				else if (x < $(this).width()/2) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/F.wav'></audio>");
 					if (scale[5] == 1) {
 						scale[5] = 2;
 						$("#checkbox6").attr('src', 'root.jpg');
 					}
-					else if (scale[5] == 0) {
+					else if (scale[5] == 0) {	
 						scale[5] = 1;
 						$("#checkbox6").attr('src', 'checked.jpg');
 						min -= 1;
@@ -309,13 +330,15 @@
 						max +=1;
 					}
 				}
+				//F#
 				else if (x < (7*($(this).width()/12))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Fs.wav'></audio>");
 					if (scale[6] == 1) {
 						scale[6] = 2;
 						$("#checkbox7").attr('src', 'root.jpg');
-						
 					}
 					else if (scale[6] == 0) {
+						
 						scale[6] = 1;
 						$("#checkbox7").attr('src', 'checked.jpg');
 						min -= 1;
@@ -328,13 +351,14 @@
 						max +=1;
 					}
 				}
+				//G
 				else if (x < (2*($(this).width()/3))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/G.wav'></audio>");
 					if (scale[7] == 1) {
 						scale[7] = 2;
 						$("#checkbox8").attr('src', 'root.jpg');
-						
 					}
-					else if (scale[6] == 0) {
+					else if (scale[7] == 0) {
 						scale[7] = 1;
 						$("#checkbox8").attr('src', 'checked.jpg');
 						min -= 1;
@@ -347,11 +371,12 @@
 						max +=1;
 					}
 				}
+				//G#
 				else if (x < (3*($(this).width()/4))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Gs.wav'></audio>");
 					if (scale[8] == 1) {
 						scale[8] = 2;
 						$("#checkbox9").attr('src', 'root.jpg');
-						
 					}
 					else if (scale[8] == 0) {
 						scale[8] = 1;
@@ -366,7 +391,9 @@
 						max +=1;
 					}
 				}
+				//A
 				else if (x < (10*($(this).width()/12))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/A.wav'></audio>");
 					if (scale[9] == 1) {
 						scale[9] = 2;
 						$("#checkbox10").attr('src', 'root.jpg');
@@ -385,11 +412,12 @@
 						max +=1;
 					}
 				}
+				//A#
 				else if (x < (11*($(this).width()/12))) {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/As.wav'></audio>");
 					if (scale[10] == 1) {
 						scale[10] = 2;
 						$("#checkbox11").attr('src', 'root.jpg');
-						
 					}
 					else if (scale[10] == 0) {
 						scale[10] = 1;
@@ -404,7 +432,9 @@
 						max +=1;
 					}
 				}
+				//B
 				else {
+					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/B.wav'></audio>");
 					if (scale[11] == 1) {
 						scale[11] = 2;
 						$("#checkbox12").attr('src', 'root.jpg');
@@ -423,14 +453,20 @@
 						max +=1;
 					}
 				};
-			}
-			if (min >= 0) {
+			//}
+			if (min > 0) {
 				$("#Console").html("<h7>Minimum: " + min + "</h7>");
 			}
 			else {
-				$("#Console").html("<h7>Notes Remaining: " + 0 + "</h7>");
+				$("#Console").html("<h7>Minimum: met</h7>");
 			}
-			$("#Console").append("<div></div><h7>Maximum: " + max + "</h7>");
+			if (max > 0) {
+				$("#Console").append("<div></div><h7>Maximum: " + max + "</h7>");
+			}
+			else {
+				$("#Console").append("<div></div><h7>Maximum: met</h7>");
+			}
+			
 			console.log(scale)
 			console.log(min)
 			console.log(max)
@@ -466,6 +502,8 @@
 				$("#checkbox" + it).attr('src', 'unchecked.jpg');
 				it+=1;
 			};
+			$("#Console").html("Minimum: 6");
+			$("#Console").append("<div></div>Maximum: 8");
 			console.log(scale);
 			console.log(min);
 			console.log(max);
@@ -483,6 +521,7 @@
 			
 		}
 
+        
 
 	</script>
 
