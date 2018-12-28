@@ -197,25 +197,78 @@
 
 		var max = 8
 
+		//Blank User Submission locked until at least 6 and no more than 8 are selected with 1 root
 		var scale = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+		//Scale as skip detection [skips between a found element and a blank element] lists based on the user submission
 		var MAJOR = [1, 1, 0, 1, 1, 1];
-
 		var harMIN = [1, 0, 1, 1, 0, 2];
-
 		var melMIN = [1, 0, 1, 1, 1, 1];
-
 		var harMAJ = [1, 1, 0, 1, 0, 2];
-
 		var WHOLE = [1, 1, 1, 1, 1];
-
 		var dim6 = [1, 1, 0, 1, 0, 0, 1];
-
 		var Wh = [1, 0, 1, 0, 1, 0, 1];
 
+		//Chords as altered shape detection [skips between root and x, then x and y, then ... for 3 to 6 note chords] lists based on the user submission
+
+		//3 NOTE CHORDS
+		var MajTriad = [3, 2];
+		var minorTriad = [2, 3];
+		var dimTriad = [2, 2];
+		var AugTriad = [3, 3];
+
+		//4 NOTE CHORDS
+		var MajSev = [3, 2, 3];
+		var DomSev = [3, 2, 2];
+		var minSev = [2, 3, 2];
+		var minb5Sev = [2, 2, 3];
+		var dimSev = [2, 2, 2];
+		var AugMajSev = [3, 3, 2];
+		var AugDomSev = [3, 3, 1];
+		var AugminSev = [2, 4, 1];
+		var Domb5Sev = [3, 1, 3];
+		var Majb5Sev = [3, 1, 4];
+		var MajSix = [3, 2, 1];
+		var minSix = [2, 3, 1];
+		var minMajSev = [2, 3, 3];
+
+		//5 NOTE CHORDS
+		var MajNine = [1, 1, 2, 3];
+		var DomNine = [1, 1, 2, 2];
+		var minNine = [1, 0, 3, 2];
+		var minb9Sev = [0, 1, 3, 2];
+		var minb5b9Sev = [0, 1, 2, 3];
+		var Doms9Sev = [2, 0, 3, 2];
+		var Domb9Sev = [0, 2, 2, 2];
+		var Majs11Seven = [3, 1, 0, 3];
+		var min11 = [2, 1, 1, 2];
+
+		//6 NOTE CHORDS
+		var MajTeen = [1, 1, 2, 1, 1];
+		var DomTeen = [1, 1, 2, 1, 0];
+		var minTeen = [1, 1, 2, 0, 1];
+		var minb9Teen = [0, 1, 3, 1, 0];
+		var DombTeen = [0, 2, 2, 1, 0];
+		var Domb5Teen = [1, 1, 1, 2, 0];
+		var minb5Teen = [1, 0, 2, 2, 0];
+		var Domb5b9Teen = [0, 2, 1, 2, 0];
+
+		function countInArray(array, what) {
+    		var count = 0;
+    		for (var i = 0; i < array.length; i++) {
+        		if (array[i] === what) {
+            	count++;
+        	}
+   			}
+    	return count;
+		}
+
+
+		//Clicks on the piano and what they do with jQuery, audio tags and building the scale submission
 		$("img").click(function(e){
 			var x = e.pageX - $(this).offset().left
 			var y = e.pageX - $(this).offset().center
+			//IN PROGRESS: Max limiter
 			//if (max > 0) {
 				//C
 				if (x < $(this).width()/12) {
@@ -485,6 +538,7 @@
 			console.log(max)
 		});
 
+		//Submission button click listener
 		$("#Submit").click(function(e){
 			if (min <= 0) {
 				scaleFinder(scale)
@@ -496,6 +550,7 @@
 			}
 		});
 
+		//Color change button click listener for alternate piano skins
 		$("#Colors").click(function(e){
 			color += 1
 			if (color % 2 == 0) {
@@ -506,6 +561,7 @@
 			}
 		});
 
+		//Reset button click listener
 		$("#Reset").click(function(e){
 			min = 6;
 			max = 8;
@@ -522,15 +578,43 @@
 			console.log(max);
 		});
 
-		function scaleFinder(choices) {
+		//In Progress
+		function scaleFinder(choices, root) {
+			start = choices.indexOf(2);
+
+			scaleLength = countInArray(choices, 1) + 1;
+
+			altMin = 0;
+
+			if (scaleLength == 6) {
+				min = 5;
+			}
+			else if (scaleLength ==7) {
+				min = 6;
+			}
+			else(scaleLength ==8) {
+				min = 7;
+			}
+
+			//blank for reordered scale
+			scale = [];
+
+			counter = -1;
+
+			//root
+			scale[0] = 1
+
+			//for (i in choices) {
+
+			//}
+			
+		}
+
+		function chordScaleGenerator(choices, root) {
 
 		}
 
-		function chordScaleGenerator(choices) {
-
-		}
-
-		function modalPairings(choices) {
+		function modalPairings(choices, root) {
 			
 		}
 
