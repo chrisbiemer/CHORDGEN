@@ -41,7 +41,7 @@
 		}
 
 		#no {
-			color: white;
+			color: #999DB7;
 		}
 	</style>
 </head>
@@ -160,7 +160,7 @@
 	<div id="Instructions" style="text-align:center">
 		<hr>
 		<hr>
-		Click a key once to include it in your scale. Click a key twice to set it as the root. Click a key three times to reset it.
+		Click any key once to include it in your scale. Click any key twice to reset it.
 		<hr>
 		<hr>
 	</div>
@@ -272,13 +272,9 @@
 			//if (max > 0) {
 				//C
 				if (x < $(this).width()/12) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/C.wav'></audio>");
-					if (scale[0] == 1) {
-						scale[0] = 2;
-						$("#checkbox1").attr('src', 'root.jpg');
-					}
-					else if (scale[0] == 0) {
-						
+					
+					if (scale[0] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/C.wav'></audio>");
 						scale[0] = 1;
 						$("#checkbox1").attr('src', 'checked.jpg');
 						min -= 1;
@@ -293,14 +289,9 @@
 				}
 				//C#
 				else if (x < $(this).width()/6) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Cs.wav'></audio>");
-					if (scale[1] == 1) {
-						scale[1] = 2;
-						$("#checkbox2").attr('src', 'root.jpg');
-						
-					}
-					else if (scale[1] == 0) {
-						
+					
+					if (scale[1] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Cs.wav'></audio>");
 						scale[1] = 1;
 						$("#checkbox2").attr('src', 'checked.jpg');
 						min -= 1;
@@ -315,14 +306,9 @@
 				}
 				//D
 				else if (x < $(this).width()/4) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/D.wav'></audio>");
-					if (scale[2] == 1) {
-						scale[2] = 2;
-						$("#checkbox3").attr('src', 'root.jpg');
-						
-					}
-					else if (scale[2] == 0) {
-						
+					
+					if (scale[2] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/D.wav'></audio>");
 						scale[2] = 1;
 						$("#checkbox3").attr('src', 'checked.jpg');
 						min -= 1;
@@ -337,13 +323,9 @@
 				}
 				//D#
 				else if (x < $(this).width()/3) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Ds.wav'></audio>");
-					if (scale[3] == 1) {
-						scale[3] = 2;
-						$("#checkbox4").attr('src', 'root.jpg');
-						
-					}
-					else if (scale[3] == 0) {
+					
+					if (scale[3] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Ds.wav'></audio>");
 						scale[3] = 1;
 						$("#checkbox4").attr('src', 'checked.jpg');
 						min -= 1;
@@ -358,12 +340,9 @@
 				}
 				//E
 				else if (x < (5*($(this).width()/12))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/E.wav'></audio>");
-					if (scale[4] == 1) {
-						scale[4] = 2;
-						$("#checkbox5").attr('src', 'root.jpg');
-					}
-					else if (scale[4] == 0) {
+					
+					if (scale[4] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/E.wav'></audio>");
 						scale[4] = 1;
 						$("#checkbox5").attr('src', 'checked.jpg');
 						min -= 1;
@@ -378,12 +357,9 @@
 				}
 				//F
 				else if (x < $(this).width()/2) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/F.wav'></audio>");
-					if (scale[5] == 1) {
-						scale[5] = 2;
-						$("#checkbox6").attr('src', 'root.jpg');
-					}
-					else if (scale[5] == 0) {	
+					
+					if (scale[5] == 0) {	
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/F.wav'></audio>");
 						scale[5] = 1;
 						$("#checkbox6").attr('src', 'checked.jpg');
 						min -= 1;
@@ -398,13 +374,9 @@
 				}
 				//F#
 				else if (x < (7*($(this).width()/12))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Fs.wav'></audio>");
-					if (scale[6] == 1) {
-						scale[6] = 2;
-						$("#checkbox7").attr('src', 'root.jpg');
-					}
-					else if (scale[6] == 0) {
-						
+					
+					if (scale[6] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Fs.wav'></audio>");
 						scale[6] = 1;
 						$("#checkbox7").attr('src', 'checked.jpg');
 						min -= 1;
@@ -419,12 +391,9 @@
 				}
 				//G
 				else if (x < (2*($(this).width()/3))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/G.wav'></audio>");
-					if (scale[7] == 1) {
-						scale[7] = 2;
-						$("#checkbox8").attr('src', 'root.jpg');
-					}
-					else if (scale[7] == 0) {
+					
+					if (scale[7] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/G.wav'></audio>");
 						scale[7] = 1;
 						$("#checkbox8").attr('src', 'checked.jpg');
 						min -= 1;
@@ -439,12 +408,9 @@
 				}
 				//G#
 				else if (x < (3*($(this).width()/4))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Gs.wav'></audio>");
-					if (scale[8] == 1) {
-						scale[8] = 2;
-						$("#checkbox9").attr('src', 'root.jpg');
-					}
-					else if (scale[8] == 0) {
+					
+					if (scale[8] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/Gs.wav'></audio>");
 						scale[8] = 1;
 						$("#checkbox9").attr('src', 'checked.jpg');
 						min -= 1;
@@ -459,13 +425,9 @@
 				}
 				//A
 				else if (x < (10*($(this).width()/12))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/A.wav'></audio>");
-					if (scale[9] == 1) {
-						scale[9] = 2;
-						$("#checkbox10").attr('src', 'root.jpg');
-						
-					}
-					else if (scale[9] == 0) {
+					
+					if (scale[9] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/A.wav'></audio>");
 						scale[9] = 1;
 						$("#checkbox10").attr('src', 'checked.jpg');
 						min -= 1;
@@ -480,12 +442,9 @@
 				}
 				//A#
 				else if (x < (11*($(this).width()/12))) {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/As.wav'></audio>");
-					if (scale[10] == 1) {
-						scale[10] = 2;
-						$("#checkbox11").attr('src', 'root.jpg');
-					}
-					else if (scale[10] == 0) {
+					
+					if (scale[10] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/As.wav'></audio>");
 						scale[10] = 1;
 						$("#checkbox11").attr('src', 'checked.jpg');
 						min -= 1;
@@ -500,13 +459,9 @@
 				}
 				//B
 				else {
-					$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/B.wav'></audio>");
-					if (scale[11] == 1) {
-						scale[11] = 2;
-						$("#checkbox12").attr('src', 'root.jpg');
-						
-					}
-					else if (scale[11] == 0) {
+					
+					if (scale[11] == 0) {
+						$("#Sound").append("<audio autoplay='autoplay' src='NOTE_SOUNDS/B.wav'></audio>");
 						scale[11] = 1;
 						$("#checkbox12").attr('src', 'checked.jpg');
 						min -= 1;
@@ -589,10 +544,10 @@
 			if (scaleLength == 6) {
 				min = 5;
 			}
-			else if (scaleLength ==7) {
+			else if (scaleLength == 7) {
 				min = 6;
 			}
-			else(scaleLength ==8) {
+			else if (scaleLength == 8) {
 				min = 7;
 			}
 
@@ -602,7 +557,7 @@
 			counter = -1;
 
 			//root
-			scale[0] = 1
+			scale[0] = 1;
 
 			//for (i in choices) {
 
